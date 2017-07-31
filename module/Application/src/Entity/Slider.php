@@ -35,7 +35,8 @@ class Slider
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"class":"form-control", "id":"title"})
      * @Annotation\Options({"label":"Title", "min":"2", "max":"100", "label_attributes":{"class":"control-label col-sm-2"}})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({"name":"stringLength", "options":{
      *     "encoding":"utf-8",
      *     "min":"2",
@@ -52,7 +53,8 @@ class Slider
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"class":"form-control", "id":"text"})
      * @Annotation\Options({"label":"Text", "min":"2", "max":"100", "label_attributes":{"class":"control-label col-sm-2"}})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({"name":"stringLength", "options":{
      *     "encoding":"utf-8",
      *     "min":"2",

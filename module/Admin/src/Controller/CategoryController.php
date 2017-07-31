@@ -38,7 +38,7 @@ class CategoryController extends AbstractActionController
 
     public function addAction()
     {
-        $category = new category();
+        $category = new Category();
         $form = $this->formService->getAnnotationForm($this->entityManager, $category);
 
         $request = $this->getRequest();

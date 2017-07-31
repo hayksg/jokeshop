@@ -62,7 +62,8 @@ class Category
      *     "min":"2",
      *     "max":"100"
      * })
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({
      *     "name":"stringLength",
      *     "options":{

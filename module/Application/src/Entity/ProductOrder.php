@@ -44,7 +44,8 @@ class ProductOrder
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"class":"form-control", "id":"userName", "disabled":"disabled"})
      * @Annotation\Options({"label":"Name"})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({"name":"stringLength", "options":{"encoding":"utf-8", "min":"1", "max":"100"}})
      */
     private $userName;
@@ -57,7 +58,8 @@ class ProductOrder
      * @Annotation\Type("Zend\Form\Element\Email")
      * @Annotation\Attributes({"class":"form-control", "id":"userEmail", "disabled":"disabled"})
      * @Annotation\Options({"label":"Email"})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({"name":"emailAddress", "options":{"encoding":"utf-8", "min":"1", "max":"100"}})
      */
     private $userEmail;
@@ -70,7 +72,8 @@ class ProductOrder
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"class":"form-control", "id":"userPhone"})
      * @Annotation\Options({"label":"Phone"})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({
      *     "name":"regex",
      *     "options":{
@@ -92,7 +95,8 @@ class ProductOrder
      * @Annotation\Attributes({"class":"form-control", "id":"userAddress", "required":"required"})
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({"label":"Address", "min":"2"})
-     * @Annotation\Filter({"name":"stripTags", "name":"stringTrim"})
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
      * @Annotation\Validator({"name":"stringLength", "options":{"encoding":"utf-8", "min":"2"}})
      */
     private $userAddress;
