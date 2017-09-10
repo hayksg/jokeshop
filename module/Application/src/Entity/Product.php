@@ -190,6 +190,9 @@ class Product
      *   "target_class":"Application\Entity\Category",
      *   "property": "name"
      * })
+     * @Annotation\Filter({"name":"stripTags"})
+     * @Annotation\Filter({"name":"stringTrim"})
+     * @Annotation\Validator({"name":"digits"})
      */
     private $category;
 
