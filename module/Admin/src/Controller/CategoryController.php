@@ -30,8 +30,12 @@ class CategoryController extends AbstractActionController
 
     public function indexAction()
     {
+        $category = new Category();
+        $form = $this->formService->getAnnotationForm($this->entityManager, $category);
+
         $categories = $this->repository->findAll();
         return new ViewModel([
+            'form'       => $form,
             'categories' => $categories,
         ]);
     }
@@ -98,6 +102,10 @@ class CategoryController extends AbstractActionController
             if ($form->isValid() && empty($form->getMessages())) {
                 $category = $form->getData();
 
+                if ($category->getParentId() == 0) {
+                    $category->setParentId(null);
+                }
+
                 $this->entityManager->persist($category);
                 $this->entityManager->flush();
 
@@ -139,39 +147,50 @@ class CategoryController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        /* Block for deletion nested products images (on server) (If category has nested categories) */
-        $nestedCategoriesChain = $this->getNestedCategoriesChain($id);
+        $form = $this->formService->getAnnotationForm($this->entityManager, $category);
+        $form->setValidationGroup(['csrf']);
 
-        array_walk_recursive($nestedCategoriesChain, function($value) {
-            $products = $this->entityManager->getRepository(Product::class)->findBy(['category' => $value->getId()]);
+        $form->setData($request->getPost());
 
-            if (isset($products)) {
-                array_walk_recursive($products, function($product){
+        if ($form->isValid()) {
+            $category = $form->getData();
+
+            /* Block for deletion nested products images (on server) (If category has nested categories) */
+            $nestedCategoriesChain = $this->getNestedCategoriesChain($id);
+
+            array_walk_recursive($nestedCategoriesChain, function($value) {
+                $products = $this->entityManager->getRepository(Product::class)->findBy(['category' => $value->getId()]);
+
+                if (isset($products)) {
+                    array_walk_recursive($products, function($product){
+                        if (is_file(getcwd() . '/public_html' . $product->getImage())) {
+                            unlink(getcwd() . '/public_html' . $product->getImage());
+                        }
+                    });
+                }
+            });
+            /* End block */
+
+            /* Block for deletion products images in category (on server) (If category has not nested categories) */
+            $products = $this->entityManager->getRepository(Product::class)->findBy(['category' => $category]);
+
+            if ($products) {
+                foreach ($products as $product) {
                     if (is_file(getcwd() . '/public_html' . $product->getImage())) {
                         unlink(getcwd() . '/public_html' . $product->getImage());
                     }
-                });
-            }
-        });
-        /* End block */
-
-        /* Block for deletion products images in category (on server) (If category has not nested categories) */
-        $products = $this->entityManager->getRepository(Product::class)->findBy(['category' => $category]);
-
-        if ($products) {
-            foreach ($products as $product) {
-                if (is_file(getcwd() . '/public_html' . $product->getImage())) {
-                    unlink(getcwd() . '/public_html' . $product->getImage());
                 }
             }
+            /* End block */
+
+            $this->entityManager->remove($category);
+            $this->entityManager->flush();
+
+            $this->flashMessenger()->addSuccessMessage('Category deleted');
+
+            return $this->redirect()->toRoute('admin/categories');
         }
-        /* End block */
 
-        $this->entityManager->remove($category);
-        $this->entityManager->flush();
-
-        $this->flashMessenger()->addSuccessMessage('Category deleted');
-
-        return $this->redirect()->toRoute('admin/categories');
+        return $this->notFoundAction();
     }
 }

@@ -277,6 +277,18 @@ input:-ms-input-placeholder {font-size: 12px;}
     color: #0a6ebd;
 }
 
+.form-delete-button input[type="submit"] {
+    border: none;
+    background: none;
+    color: #2196f3;
+    padding-left: 0;
+}
+
+.form-delete-button input[type="submit"]:hover {
+    color: #0a6ebd;
+    text-decoration: underline;
+}
+
 .basket-continue-cancel-buttons-box a {
     width: 100px;
 }

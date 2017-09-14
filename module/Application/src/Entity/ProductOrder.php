@@ -28,6 +28,17 @@ class ProductOrder
     private $id;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Csrf")
+     * @Annotation\Name("csrf")
+     * @Annotation\Options({
+     *     "csrf_options":{
+     *          "timeout":600
+     *     }
+     * })
+     */
+    private $csrf;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="user_id", type="integer", nullable=false)

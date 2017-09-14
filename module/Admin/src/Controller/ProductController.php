@@ -239,18 +239,29 @@ class ProductController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        /* Block for deletion product image */
-        if ($product) {
-            if (is_file(getcwd() . '/public_html' . $product->getImage())) {
-                unlink(getcwd() . '/public_html' . $product->getImage());
+        $form = $this->formService->getAnnotationForm($this->entityManager, $product);
+        $form->setValidationGroup(['csrf']);
+
+        $form->setData($request->getPost());
+
+        if ($form->isValid()) {
+            $product = $form->getData();
+
+            /* Block for deletion product image */
+            if ($product) {
+                if (is_file(getcwd() . '/public_html' . $product->getImage())) {
+                    unlink(getcwd() . '/public_html' . $product->getImage());
+                }
             }
+            /* End block */
+
+            $this->entityManager->remove($product);
+            $this->entityManager->flush();
+
+            $this->flashMessenger()->addSuccessMessage('Product deleted');
+            return $this->redirect()->toRoute('admin/products');
         }
-        /* End block */
 
-        $this->entityManager->remove($product);
-        $this->entityManager->flush();
-
-        $this->flashMessenger()->addSuccessMessage('Product deleted');
-        return $this->redirect()->toRoute('admin/products');
+        return $this->notFoundAction();
     }
 }

@@ -14,6 +14,8 @@ $form->prepare();
             <?= $this->form()->openTag($form) ?>
             <fieldset>
                 <legend>Fill the form please</legend>
+                <?= $this->formHidden($form->get('csrf')); ?>
+                <?= $this->formElementErrors($form->get('csrf')); ?>
                 <?php
                     foreach ($form as $element) {
                         $formElement = '';

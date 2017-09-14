@@ -1,18 +1,6 @@
 <?php
 $headTitle = 'Edit product';
 $this->headTitle($headTitle);
-
-$form = $this->form;
-$form->setAttribute('action', $this->url('admin/products', ['action' => 'edit', 'id' => $this->id]));
-$form->prepare();
-
-foreach ($form as $element) {
-    $attributes = $element->getAttributes();
-
-    if (isset($attributes['required']) && $attributes['required'] == 'required') {
-        $element->setLabel($element->getLabel() . ' *');
-    }
-}
 ?>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -30,12 +18,39 @@ foreach ($form as $element) {
     </div>
 </div>
 <!-- Hidden form for delete user or admin -->
-<form action="<?= $this->url('admin/products', ['action' => 'delete', 'id' => $this->id]) ?>"
-      method="post"
-      class="delete-product-form"
->
-    <button type="button">Yes</button>
-</form>
+<?php
+$form = $this->form;
+$form->setAttributes([
+    'action' => $this->url('admin/products', ['action' => 'delete', 'id' => $this->id]),
+    'class'  => 'delete-product-form',
+]);
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('csrf'));
+echo $this->form()->closeTag();
+?>
+<!-- Form for edit user or admin -->
+<?php
+$form = $this->form;
+$form->setAttributes([
+    'action'  => $this->url('admin/products', ['action' => 'edit', 'id' => $this->id]),
+    'id'      => 'product',
+    'name'    => 'product',
+    'class'   => 'form-horizontal',
+    'enctype' => 'multipart/form-data',
+]);
+$form->get('submit')->setAttribute('class', 'btn btn-success');
+$form->prepare();
+
+foreach ($form as $element) {
+    $attributes = $element->getAttributes();
+
+    if (isset($attributes['required']) && $attributes['required'] == 'required') {
+        $element->setLabel($element->getLabel() . ' *');
+    }
+}
+?>
 <div class="row">
     <div class="col-sm-12">
         <div class="well">
@@ -43,6 +58,8 @@ foreach ($form as $element) {
                 <div class="col-md-10 col-md-offset-1">
                     <?= $this->form()->openTag($form) ?>
                     <fieldset><legend>Fill the form please</legend><br>
+                        <?= $this->formHidden($form->get('csrf')); ?>
+                        <?= $this->formElementErrors($form->get('csrf')); ?>
                         <div class="form-group">
                             <?= $this->formLabel($form->get('name')) ?>
                             <div class="col-sm-10">

@@ -60,7 +60,7 @@ class OrderController extends AbstractActionController
         $order->setProducts($selectedProductsJson);
 
         $form = $this->formService->getAnnotationForm($this->entityManager, $order);
-        $form->setValidationGroup(['userPhone', 'userAddress']);
+        $form->setValidationGroup(['csrf', 'userPhone', 'userAddress']);
 
         $request = $this->getRequest();
         if ($request->isPost()) {

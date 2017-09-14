@@ -27,12 +27,20 @@ $this->headTitle($headTitle);
                             Edit
                         </a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <form action="<?= $this->url('admin/categories', ['action' => 'delete', 'id' => (int)$category->getId()]) ?>"
-                              method="post"
-                              class="form-delete-button delete-category-admin"
-                        >
-                            <button>Delete</button>
-                        </form>
+                        <?php
+                        $form = $this->form;
+                        $form->setAttributes([
+                        'action' => $this->url('admin/categories', ['action' => 'delete', 'id' => (int)$category->getId()]),
+                        'class' => 'form-delete-button delete-category-admin',
+                        ]);
+                        $form->prepare();
+
+                        echo $this->form()->openTag($form);
+                        echo $this->formHidden($form->get('csrf'));
+                        /* Here jquery script(j-confirm-action.js) did not work with name 'submit' */
+                        echo $this->formSubmit($form->get('submit')->setValue('Delete')->setAttribute('name', 'send')->removeAttribute('class', 'btn btn-default'));
+                        echo $this->form()->closeTag();
+                        ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

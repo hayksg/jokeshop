@@ -109,9 +109,14 @@
         <footer class="footer">
             <hr>
             <div class="container">
-                <p>&copy; <?= $this->getYear() ?> by PHP-User. All rights reserved.</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>&copy; <?= $this->getYear() ?> by PHP-User. All rights reserved.</p>
+                    </div>
+                </div>
             </div>
         </footer>
+
         <?= $this->inlineScript() ?>
 
         <a id="back-to-top"
