@@ -32,7 +32,6 @@ echo $this->form()->closeTag();
 ?>
 <!-- Form for edit user or admin -->
 <?php
-$form = $this->form;
 $form->setAttributes([
     'action'  => $this->url('admin/products', ['action' => 'edit', 'id' => $this->id]),
     'id'      => 'product',
