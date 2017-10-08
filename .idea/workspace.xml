@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="017de6f7-3076-408d-8a58-2d384bc780b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/autoload/global.php" afterPath="$PROJECT_DIR$/config/autoload/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Authentication/src/Module.php" afterPath="$PROJECT_DIR$/module/Authentication/src/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/ContactUs/src/Entity/ContactUs.php" afterPath="$PROJECT_DIR$/module/ContactUs/src/Entity/ContactUs.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="40" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LoginForm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Authentication/src/Form/LoginForm.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,7 +60,7 @@
       <file leaf-file-name="LoginFilter.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Authentication/src/Filter/LoginFilter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="88">
               <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding>
                 <element signature="e#41#74#0#PHP" expanded="true" />
@@ -79,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/autoload/global.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#402#440#0#PHP" expanded="true" />
               </folding>
@@ -91,10 +81,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ContactUs.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/ContactUs/src/Entity/ContactUs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Authentication/src/Module.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1476">
+            <state relative-caret-position="88">
               <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="e#34#65#0#PHP" expanded="true" />
@@ -198,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/Admin/view/admin/order/index.phtml" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/index/index.phtml" />
         <option value="$PROJECT_DIR$/module/Application/src/Entity/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Entity/Repository/ProductOrderRepository.php" />
@@ -249,6 +248,7 @@
         <option value="$PROJECT_DIR$/module/Authentication/src/Filter/LoginFilter.php" />
         <option value="$PROJECT_DIR$/module/Authentication/src/Module.php" />
         <option value="$PROJECT_DIR$/config/autoload/global.php" />
+        <option value="$PROJECT_DIR$/module/ContactUs/src/Entity/ContactUs.php" />
       </list>
     </option>
   </component>
@@ -309,6 +309,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -396,6 +397,21 @@
               <item name="jokeshop.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="jokeshop.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ContactUs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jokeshop.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jokeshop.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ContactUs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="jokeshop.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jokeshop.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="module" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Portfolio" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -403,7 +419,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,12 +660,13 @@
       <workItem from="1505574207465" duration="389000" />
       <workItem from="1506515436829" duration="347000" />
       <workItem from="1507119487172" duration="240000" />
-      <workItem from="1507214326566" duration="388000" />
+      <workItem from="1507214326566" duration="455000" />
+      <workItem from="1507467640725" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561166000" />
+    <option name="totallyTimeSpent" value="561305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -698,13 +714,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/js/app-script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="112" column="25" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/Service/FormServiceInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -978,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,7 +1064,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Authentication/src/Filter/LoginFilter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="88">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
             <element signature="e#41#74#0#PHP" expanded="true" />
@@ -1067,7 +1074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Authentication/src/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1476">
+        <state relative-caret-position="88">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="e#34#65#0#PHP" expanded="true" />
@@ -1078,10 +1085,18 @@
     <entry file="file://$PROJECT_DIR$/config/autoload/global.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#402#440#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/ContactUs/src/Entity/ContactUs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
